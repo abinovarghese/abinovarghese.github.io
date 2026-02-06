@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abin O Varghese - Resume</title>
+    <style>
+        @page {
+            size: A4 portrait;
+            margin: 12mm 15mm;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            width: 210mm;
+            min-height: 297mm;
+        }
+
+        body {
+            font-family: 'Calibri', 'Segoe UI', Arial, sans-serif;
+            font-size: 10.5pt;
+            line-height: 1.35;
+            color: #333;
+            width: 210mm;
+            min-height: 297mm;
+            margin: 0 auto;
+            padding: 12mm 15mm;
+            background: white;
+        }
+
+        @media print {
+            html, body {
+                width: 210mm;
+                height: 297mm;
+            }
+            body {
+                padding: 0;
+                margin: 0;
+            }
+            .download-bar {
+                display: none !important;
+            }
+        }
+
+        @media screen {
+            body {
+                box-shadow: 0 0 10px rgba(0,0,0,0.1);
+                margin: 60px auto 20px;
+            }
+        }
+
+        /* Download Bar */
+        .download-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: #1a365d;
+            padding: 12px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+
+        .download-bar a.back-link {
+            color: #a0c4ff;
+            text-decoration: none;
+            font-size: 14px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+
+        .download-bar a.back-link:hover {
+            color: #fff;
+        }
+
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 20px;
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 14px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #2c5282;
+        }
+
+        .name {
+            font-size: 22pt;
+            font-weight: bold;
+            color: #1a365d;
+            margin-bottom: 5px;
+            letter-spacing: 1px;
+        }
+
+        .contact {
+            font-size: 9.5pt;
+            color: #4a5568;
+        }
+
+        .contact a {
+            color: #2b6cb0;
+            text-decoration: none;
+        }
+
+        .contact span {
+            margin: 0 6px;
+            color: #a0aec0;
+        }
+
+        /* Sections */
+        .section {
+            margin-bottom: 12px;
+        }
+
+        .section-title {
+            font-size: 10.5pt;
+            font-weight: bold;
+            color: #1a365d;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 1.5px solid #2c5282;
+            padding-bottom: 2px;
+            margin-bottom: 6px;
+        }
+
+        /* Summary */
+        .summary {
+            text-align: justify;
+            color: #2d3748;
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 115px 1fr;
+            gap: 3px 10px;
+        }
+
+        .skill-category {
+            font-weight: 600;
+            color: #2d3748;
+        }
+
+        .skill-items {
+            color: #4a5568;
+        }
+
+        /* Experience */
+        .job {
+            margin-bottom: 10px;
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 3px;
+        }
+
+        .company {
+            font-weight: bold;
+            color: #2d3748;
+        }
+
+        .job-title {
+            color: #4a5568;
+            font-style: italic;
+        }
+
+        .job-date {
+            color: #718096;
+            font-size: 9.5pt;
+        }
+
+        .job ul {
+            margin-left: 16px;
+            color: #2d3748;
+        }
+
+        .job li {
+            margin-bottom: 2px;
+        }
+
+        .job li strong {
+            color: #1a365d;
+        }
+
+        .metric {
+            color: #2b6cb0;
+            font-weight: 600;
+        }
+
+        /* Awards */
+        .awards-content {
+            color: #2d3748;
+        }
+
+        .award-title {
+            font-weight: 600;
+            color: #1a365d;
+        }
+
+        /* Education */
+        .education-item {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .degree {
+            font-weight: 600;
+            color: #2d3748;
+        }
+
+        .school {
+            color: #4a5568;
+        }
+
+        .edu-date {
+            color: #718096;
+            font-size: 9.5pt;
+        }
+    </style>
+</head>
+<body>
+    <div class="download-bar">
+        <a href="/" class="back-link">&larr; Back to Portfolio</a>
+        <button class="download-btn" onclick="window.print()">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                <polyline points="7 10 12 15 17 10"/>
+                <line x1="12" y1="15" x2="12" y2="3"/>
+            </svg>
+            Download PDF
+        </button>
+    </div>
+
+    <header class="header">
+        <div class="name">ABIN O VARGHESE</div>
+        <div class="contact">
+            Bangalore, India <span>|</span>
+            <a href="mailto:abinovarghese@gmail.com">abinovarghese@gmail.com</a> <span>|</span>
+            +91 9447708501 <span>|</span>
+            <a href="https://linkedin.com/in/abinovarghese">linkedin.com/in/abinovarghese</a> <span>|</span>
+            <a href="https://abinovarghese.github.io">abinovarghese.github.io</a>
+        </div>
+    </header>
+
+    <section class="section">
+        <h2 class="section-title">Summary</h2>
+        <p class="summary">
+            Senior Software Engineer with <strong>8+ years of experience</strong> building cloud-native distributed systems and enterprise platforms.
+            Expert in <strong>Java, Spring Boot, Kubernetes, and microservices architecture</strong>, with hands-on experience running production workloads on IBM Cloud.
+            Proven track record of designing systems for scale, reliability, and cost efficiency.
+            Currently delivering <strong>AI-powered automation solutions</strong> using LLMs, RAG pipelines, and agent-based architectures.
+            Recognized as a <strong>Top 5% performer</strong> with multiple awards for innovation and client impact.
+        </p>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">Technical Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-category">Languages:</div>
+            <div class="skill-items">Java, Python, JavaScript/TypeScript, SQL</div>
+
+            <div class="skill-category">Backend & APIs:</div>
+            <div class="skill-items">Spring Boot, Microservices, REST APIs, GraphQL, Hibernate</div>
+
+            <div class="skill-category">Cloud & DevOps:</div>
+            <div class="skill-items">IBM Cloud, Kubernetes, Docker, CI/CD (Jenkins, GitHub Actions), Linux, Terraform</div>
+
+            <div class="skill-category">Data & Caching:</div>
+            <div class="skill-items">PostgreSQL, MS SQL Server, IBM Cloudant, DB2, Redis, IBM Cloud Object Storage</div>
+
+            <div class="skill-category">Frontend:</div>
+            <div class="skill-items">React, Angular, HTML5, CSS3</div>
+
+            <div class="skill-category">AI & Automation:</div>
+            <div class="skill-items">LLMs (watsonx, GPT-4), RAG, Prompt Engineering, LangChain, AI Agents</div>
+
+            <div class="skill-category">Observability:</div>
+            <div class="skill-items">Prometheus, Grafana, ELK Stack, Application Performance Monitoring</div>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">Professional Experience</h2>
+
+        <div class="job">
+            <div class="job-header">
+                <div>
+                    <span class="company">IBM India Pvt Ltd</span> — <span class="job-title">Senior Software Engineer</span>
+                </div>
+                <div class="job-date">April 2020 – Present</div>
+            </div>
+            <ul>
+                <li>Architected and delivered <strong>cloud-native microservices</strong> using Java 11+, Spring Boot, and REST APIs, deployed on IBM Cloud Kubernetes Service handling <span class="metric">10K+ daily requests</span>.</li>
+                <li>Owned <strong>full-service lifecycle</strong> for 5+ production services—from system design and development to deployment, monitoring, and on-call support.</li>
+                <li>Built a <strong>custom ticketing platform</strong> integrated with ServiceNow REST APIs, serving <span class="metric">5,000+ internal users</span> while reducing license costs by <span class="metric">85%</span> (from 500+ to ~40 active licenses).</li>
+                <li>Implemented <strong>Redis-based distributed caching</strong>, reducing average API response times by <span class="metric">35%</span> and decreasing database load by <span class="metric">40%</span>.</li>
+                <li>Developed <strong>LLM-powered AI assistants</strong> using watsonx and RAG pipelines, automating ticket classification and resolution, reducing manual handling effort by <span class="metric">30%</span>.</li>
+                <li>Led technical design reviews and <strong>mentored 3 junior engineers</strong>, establishing code review standards and best practices for the team.</li>
+                <li>Improved <strong>CI/CD pipelines</strong> with automated testing and deployment gates, increasing deployment frequency by <span class="metric">2x</span> and reducing release failures by <span class="metric">50%</span>.</li>
+            </ul>
+        </div>
+
+        <div class="job">
+            <div class="job-header">
+                <div>
+                    <span class="company">Infosys Ltd</span> — <span class="job-title">Software Engineer</span>
+                </div>
+                <div class="job-date">February 2017 – April 2020</div>
+            </div>
+            <ul>
+                <li>Developed and maintained <strong>Java-based enterprise applications</strong> for a Fortune 500 financial services client, supporting <span class="metric">100K+ end users</span>.</li>
+                <li>Optimized critical database queries and implemented connection pooling, reducing page load times by <span class="metric">45%</span> for high-traffic modules.</li>
+                <li>Automated manual deployment processes using shell scripts and Jenkins, cutting release time from <span class="metric">4 hours to 30 minutes</span>.</li>
+                <li>Recognized as a <strong>consistent high performer</strong> with top ratings across 6 consecutive review cycles.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">Recognition & Awards</h2>
+        <div class="awards-content">
+            <span class="award-title">Consistent Outstanding Performer</span> — Top 5% rating across multiple review cycles<br>
+            <span class="award-title">IBM Entrepreneur Award</span> — 2024 & 2023 (Innovation & Business Impact)<br>
+            <span class="award-title">IBM CIO Client & Partner Success Award</span> — Q1 2022<br>
+            <span class="award-title">IBM CIO Challenge Coin</span> — 2021 | <span class="award-title">INSTA Award</span> — Infosys 2018
+        </div>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">Education</h2>
+        <div class="education-item">
+            <div>
+                <span class="degree">Bachelor of Technology (B.Tech)</span> — Electronics & Communication Engineering<br>
+                <span class="school">College of Engineering, Adoor, Kerala</span>
+            </div>
+            <div class="edu-date">2012 – 2016</div>
+        </div>
+    </section>
+</body>
+</html>
